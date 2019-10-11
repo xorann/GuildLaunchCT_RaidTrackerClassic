@@ -5814,15 +5814,10 @@ function GetFixedUpUnitName(name)
     if name == nil then
         return name
     else
-        local fixedUpUnitName = GetUnitName(name, true)
+        local fixedUpUnitName = GetUnitName(name, false)
         if fixedUpUnitName == nil then
             return name
         end
-        if string.match(fixedUpUnitName, "-") then
-            return  fixedUpUnitName:gsub("%s+", "")
-        else
-            local realmName = GetRealmName(name)
-            return fixedUpUnitName.."-"..realmName:gsub("%s+", "")
-        end
+		return fixedUpUnitName
     end
 end
