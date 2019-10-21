@@ -2420,8 +2420,8 @@ function CT_RaidTracker_OnEvent(this, event, arg1)
             CT_RaidTracker_UpdateView();
         end
     -- Party code end
-    elseif ( event == "CHAT_MSG_LOOT" and CT_RaidTracker_GetCurrentRaid  and CT_RaidTracker_Options["DKPmonLoggingMode"] == false) then
-        if(not testo) then
+    elseif ( event == "CHAT_MSG_LOOT" and CT_RaidTracker_GetCurrentRaid  and CT_RaidTracker_Options["DKPmonLoggingMode"] == false) then		
+		if(not testo) then
             testo = {};
         end
         tinsert(testo, arg1);
@@ -2495,7 +2495,46 @@ function CT_RaidTracker_OnEvent(this, event, arg1)
             end
             local iotrack, iogroup, iocostsgrabbing, ioaskcosts
             --CT_RaidTracker_Debug("itemdropped-status", tostring(itemoptions["status"]));
-            if ( (itemoptions and itemoptions["status"] and itemoptions["status"] == true) or ((sColor and sItem and sName and CT_RaidTracker_RarityTable[sColor] >= CT_RaidTracker_Options["MinQuality"]) and (not itemoptions or not itemoptions["status"]))) then
+			function exemption(name) 
+				if (name == CT_RaidTracker_exemptions["Onyxia Hide Backpack"]
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Weapon - Healing Power"]
+					or name == CT_RaidTracker_exemptions["Plans: Elemental Sharpening Stone"]
+					or name == CT_RaidTracker_exemptions["Pattern: Core Armor Kit"]
+					or name == CT_RaidTracker_exemptions["Schematic: Force Reactive Disk"]
+					or name == CT_RaidTracker_exemptions["Recipe: Major Rejuvenation Potion"]
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Weapon - Spell Power"]
+					
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Gloves - Superior Agility"]
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Cloak - Stealth"]
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Gloves - Frost Power"]
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Cloak - Dodge"]
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Gloves - Fire Power"]
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Gloves - Healing Power"]
+					or name == CT_RaidTracker_exemptions["Formula: Enchant Gloves - Shadow Power"]
+					or name == CT_RaidTracker_exemptions["Plans: Thick Obsidian Breastplate"]
+					--[[
+					or name == CT_RaidTracker_exemptions["Dark Iron Ore"]
+					or name == CT_RaidTracker_exemptions["Lava Core"]
+					or name == CT_RaidTracker_exemptions["Fiery Core"]
+					or name == CT_RaidTracker_exemptions["Core Leather"]
+					]]
+					) then
+					return true;
+				else
+					return false;
+				end
+			end
+			
+            if ((itemoptions and itemoptions["status"] and itemoptions["status"] == true)
+				or (
+					(sColor and sItem and sName 
+					and (
+						CT_RaidTracker_RarityTable[sColor] >= CT_RaidTracker_Options["MinQuality"])
+						or exemption(sName)
+					)
+					and (sName ~= CT_RaidTracker_exemptions["Nexus Crystal"])
+					and (not itemoptions or not itemoptions["status"])
+				)) then
                 CT_RaidTracker_Debug("itemdropped", "item has status");
                 -- Insert into table
                 if ( not CT_RaidTracker_RaidLog[CT_RaidTracker_GetCurrentRaid] and CT_RaidTracker_Options["AutoRaidCreation"] == true) then

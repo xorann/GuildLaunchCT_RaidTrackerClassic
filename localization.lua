@@ -301,6 +301,31 @@ CT_RaidTracker_lang_BossKills_Dazar_Jaina_BossName = "Lady Jaina Proudmoore";
 --Queen Azshara
 CT_RaidTracker_lang_BossKills_Queen_Azshara_BossName = "Queen Azshara";
 
+CT_RaidTracker_exemptions = {
+	["Dark Iron Ore"] = "Dark Iron Ore",
+	["Lava Core"] = "Lava Core",
+	["Fiery Core"] = "Fiery Core",
+	["Core Leather"] = "Core Leather",
+	["Onyxia Hide Backpack"] = "Onyxia Hide Backpack",
+	["Formula: Enchant Weapon - Healing Power"] = "Formula: Enchant Weapon - Healing Power",
+	["Plans: Elemental Sharpening Stone"] = "Plans: Elemental Sharpening Stone",
+	["Pattern: Core Armor Kit"] = "Pattern: Core Armor Kit",
+	["Schematic: Force Reactive Disk"] = "Schematic: Force Reactive Disk",
+	["Recipe: Major Rejuvenation Potion"] = "Recipe: Major Rejuvenation Potion",
+	["Formula: Enchant Weapon - Spell Power"] = "Formula: Enchant Weapon - Spell Power",
+	
+	["Nexus Crystal"] = "Nexus Crystal",
+		
+	["Formula: Enchant Gloves - Superior Agility"] = "Formula: Enchant Gloves - Superior Agility",
+	["Formula: Enchant Cloak - Stealth"] = "Formula: Enchant Cloak - Stealth",
+	["Formula: Enchant Gloves - Frost Power"] = "Formula: Enchant Gloves - Frost Power",
+	["Formula: Enchant Cloak - Dodge"] = "Formula: Enchant Cloak - Dodge",
+	["Formula: Enchant Gloves - Fire Power"] = "Formula: Enchant Gloves - Fire Power",
+	["Formula: Enchant Gloves - Healing Power"] = "Formula: Enchant Gloves - Healing Power",
+	["Formula: Enchant Gloves - Shadow Power"] = "Formula: Enchant Gloves - Shadow Power",
+	["Plans: Thick Obsidian Breastplate"] = "Plans: Thick Obsidian Breastplate",
+};
+
 -- Translations
 
 if (GetLocale() == "deDE") then
@@ -371,6 +396,31 @@ if (GetLocale() == "deDE") then
 	CT_RaidTracker_lang_BossKills_Conclave_of_Wind_Yell = "The Conclave of Wind has dissipated. Your honorable conduct and determination have earned you the right to face me in battle, mortals. I await your assault on my platform! Come!";
 	CT_RaidTracker_lang_BossKills_Conclave_of_Wind_BossName = "Conclave of Wind";	
 
+	CT_RaidTracker_exemptions = {
+		["Dark Iron Ore"] = "Dunkeleisenerz",
+		["Lava Core"] = "Lavakern",
+		["Fiery Core"] = "Feuerkern",
+		["Core Leather"] = "Kernleder",
+		["Onyxia Hide Backpack"] = "Rucksack aus Onyxias Haut",
+		["Formula: Enchant Weapon - Healing Power"] = "Formel: Waffe - Heilkraft",
+		["Plans: Elemental Sharpening Stone"] = "Pläne: Elementarwetzstein",
+		["Pattern: Core Armor Kit"] = "Muster: Kernrüstungsset",
+		["Schematic: Force Reactive Disk"] = "Bauplan: Machtreaktive Scheibe",
+		["Recipe: Major Rejuvenation Potion"] = "Erheblicher Verjüngungstrank",
+		["Formula: Enchant Weapon - Spell Power"] = "Formel: Waffe - Zauberkraft",
+		
+		["Nexus Crystal"] = "Nexuskristall",
+		
+		["Formula: Enchant Gloves - Superior Agility"] = "Formel: Handschuhe - Überragende Beweglichkeit",
+		["Formula: Enchant Cloak - Stealth"] = "Formel: Umhang - Verstohlenheit",
+		["Formula: Enchant Gloves - Frost Power"] = "Formel: Handschuhe - Frostmacht",
+		["Formula: Enchant Cloak - Dodge"] = "Formel: Umhang - Ausweichen",
+		["Formula: Enchant Gloves - Fire Power"] = "Formel: Handschuhe - Feuermacht",
+		["Formula: Enchant Gloves - Healing Power"] = "Formel: Handschuhe - Heilkraft",
+		["Formula: Enchant Gloves - Shadow Power"] = "Formel: Handschuhe - Schattenmacht",
+		["Plans: Thick Obsidian Breastplate"] = "Pläne: Dicke Obsidianbrustplatte",
+	};
+	
 elseif (GetLocale() == "frFR") then
 	CT_RaidTracker_lang_LeftGroup = "([^%s]+) a quitt\195\169 le groupe de raid";
 	CT_RaidTracker_lang_JoinedGroup = "([^%s]+) a rejoint le group de raid";
